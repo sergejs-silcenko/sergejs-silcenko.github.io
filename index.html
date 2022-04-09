@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div class="title">Case Converter</div>
+    <label><textarea></textarea></label>
+    <br>
+    <button id="upper-case">Upper Case</button>
+    <button id="lower-case">Lower Case</button>
+    <button id="proper-case">Proper Case</button>
+    <button id="sentence-case">Sentence Case</button>
+
+<!-- UpperCase -->
+<script>
+document.getElementById('upper-case').addEventListener('click', function (){
+    document.querySelector('textarea').value = document.querySelector('textarea').value.toUpperCase();
+});
+</script>
+<!-- LowerCase -->
+<script>
+document.getElementById('lower-case').addEventListener('click', function (){
+    document.querySelector('textarea').value = document.querySelector('textarea').value.toLowerCase();
+});
+</script>
+<!-- ProperCase -->
+<script>
+document.getElementById('proper-case').addEventListener('click', function (){
+   let titleCase = document.querySelector('textarea').value;
+ titleCase = titleCase.toLowerCase()
+     .split(" ")
+     .map((s) => s.charAt(0).toUpperCase() + s.substring(1).toLowerCase())
+     .join(" ");
+ document.querySelector('textarea').value = titleCase;
+
+});
+</script>
+<!-- SentenceCase -->
+<script>
+    
+</script>
+
+
+</body>
+</html>
