@@ -19,27 +19,36 @@ document.getElementById('upper-case').addEventListener('click', function (){
     document.querySelector('textarea').value = document.querySelector('textarea').value.toUpperCase();
 });
 </script>
+    
 <!-- LowerCase -->
 <script>
 document.getElementById('lower-case').addEventListener('click', function (){
     document.querySelector('textarea').value = document.querySelector('textarea').value.toLowerCase();
 });
 </script>
+    
 <!-- ProperCase -->
 <script>
 document.getElementById('proper-case').addEventListener('click', function (){
    let titleCase = document.querySelector('textarea').value;
  titleCase = titleCase.toLowerCase()
-     .split(" ")
-     .map((s) => s.charAt(0).toUpperCase() + s.substring(1).toLowerCase())
-     .join(" ");
+     .split(' ')
+     .map((p) => p.charAt(0).toUpperCase() + p.substring(1).toLowerCase())
+     .join(' ');
  document.querySelector('textarea').value = titleCase;
-
 });
 </script>
-<!-- SentenceCase -->
-<script>
     
+<!-- SentenceCase / at this moment only works with dots -->
+<script>
+document.getElementById('sentence-case').addEventListener('click', function (){
+   let titleCaseAfterDot = document.querySelector('textarea').value;
+   titleCaseAfterDot = titleCaseAfterDot.toLowerCase()
+    .split('. ')
+    .map((s) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase())
+    .join('. ');
+   document.querySelector('textarea').value = titleCaseAfterDot;
+});
 </script>
 
 
